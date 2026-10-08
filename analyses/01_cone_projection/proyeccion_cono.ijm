@@ -4,7 +4,8 @@
 // Propósito: Calcular la desalineación del punto principal (offsets) y el
 // ángulo de rotación del detector en microtomografía mediante el análisis
 // geométrico de la proyección del cono del haz de Rayos X.
-// Entradas:  - Imagen radiográfica abierta y activa en FIJI del círculo.
+// Entradas:  - Imagen radiográfica del círculo (proyección del cono), abierta
+//              y activa en FIJI.
 //            - BETA_DEG: Semi-ángulo del haz cónico, en grados (línea 14).
 // Salidas:   - Imagen RGB con gráficos superpuestos (ejes de elipse, punto
 // principal y ángulo de inclinación fuera de plano)

@@ -1,0 +1,69 @@
+\chapter{Introducción}
+%\addcontentsline{toc}{chapter}{Introducción}
+\label{introduccion}
+
+Desde el descubrimiento fortuito de los rayos X por Wilhelm C. Röntgen a finales del siglo
+XIX, la capacidad de observar el interior de la materia de forma no invasiva ha sido uno
+de los pilares de la ciencia moderna. Lo que comenzó como una herramienta de diagnóstico
+médico ha evolucionado, gracias al desarrollo de la computación y la microelectrónica,
+en técnicas de altísima precisión como la microtomografía computarizada ($\mu$CT).
+Esta técnica permite hoy reconstruir volúmenes tridimensionales con resoluciones en la
+escala micrométrica, convirtiéndose en un recurso indispensable no solo en medicina,
+sino también en la ciencia de materiales, la geología y la industria. \cite{Stock2019}
+
+Su utilidad evidente se refleja en la gran cantidad de avances tecnológicos y mejoras
+técnicas producidas cada año, propiciadas por empresas que buscan comercializar sistemas de
+$\mu$CT cada vez más accesibles y de mejor rendimiento, abocados a tareas específicas,
+ya sea en medicina, industria o investigación. En el caso de esta última, sin embargo,
+la implementación de un sistema de microtomografía de diseño propio o no comercial presenta
+ventajas sustanciales frente a las soluciones cerradas de mercado. Mientras que los
+equipos comerciales suelen operar como ``cajas negras'' con parámetros fijos y algoritmos
+de procesamiento propietarios, un sistema experimental de arquitectura abierta permite la manipulación directa
+de la geometría del sistema, el intercambio y la reparación de componentes clave —como la fuente 
+o el detector— y el acceso total a los datos crudos y al código base. Esta flexibilidad es 
+fundamental para la investigación aplicada, ya que permite adaptar el instrumento a las 
+necesidades específicas de la muestra y garantiza una transparencia absoluta en la 
+trazabilidad de todos los procesos de adquisición y reconstrucción. Por último, este tipo
+de sistemas se presenta como una opción más económica y accesible para laboratorios de
+investigación, sin por ello sacrificar la calidad de los resultados obtenidos.
+
+Sin embargo, el potencial de un sistema de $\mu$CT está intrínsecamente ligado a la calidad
+de su calibración y a la precisión de su geometría. En sistemas no comerciales o ensamblados
+en laboratorios de investigación, además del conocimiento concreto sobre cómo operarlos,
+surgen desafíos particulares: desde desalineaciones 
+mecánicas casi imperceptibles hasta variaciones en la respuesta de intensidad del detector.
+Estos factores, si no se tratan adecuadamente, derivan en artefactos que degradan la
+resolución espacial y dificultan la interpretación cualitativa y cuantitativa de los resultados.
+En otras palabras, una alineación geométrica precisa es el factor más influyente en la
+calidad de un microtomógrafo y en la fidelidad de sus tomografías para realizar mediciones
+en la escala micrométrica.
+
+\section{Objetivos}
+
+El objetivo general de este trabajo es el desarrollo y la planificación de
+una secuencia de métodos para preparar y optimizar un 
+sistema de microtomografía computarizada de rayos X. En otras palabras, se
+busca establecer un protocolo detallado de calibración geométrica
+de un microtomógrafo de rayos X (en particular, uno de arquitectura abierta,
+para un ensamblado e implementación óptimos). Con tal fin, se propone el estudio
+teórico y experimental de los procesos físicos de interacción de la radiación
+con la materia que participan en los procedimientos de adquisición de imágenes
+radiográficas. A su vez, se exploran técnicas de procesamiento matemático y computacional
+de imágenes digitales, dirigidas al pre-procesamiento de la tomografía.
+
+\vspace{5mm}
+
+Se proponen como objetivos específicos:
+
+\begin{itemize}
+    \item Estudio e implementación de técnicas de alineación geométrica de un 
+    sistema de microCT.
+    \item Estudio e implementación de técnicas computacionales para la determinación
+    de correcciones geométricas.
+    \item Estudio e implementación de métodos de medición de la resolución espacial
+    efectiva del sistema de microCT.
+    \item Implementación de técnicas de pre-procesamiento digital en imágenes
+    radiográficas, para mejorar la tomografía resultante.
+    \item Implementación de lo investigado en la mejora del actual microtomógrafo
+    del laboratorio.
+\end{itemize}

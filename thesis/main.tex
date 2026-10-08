@@ -1,0 +1,126 @@
+\documentclass[12pt,a4paper,twoside,openright]{report}
+
+\usepackage{afterpage}
+
+
+% --- 1. CONFIGURACIÓN BÁSICA Y FUENTES ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}   
+%\usepackage{lmodern}          % Fuentes nítidas y completas
+\usepackage{microtype}        % Evita que el texto se salga de los márgenes
+
+%times en texto y default de latex en formulas
+\renewcommand{\rmdefault}{ptm}
+
+
+
+% Márgenes para encuadernación (A4)
+\usepackage{geometry}
+\geometry{
+    a4paper,
+    left=30mm,   
+    right=30mm,
+    top=25mm,
+    bottom=25mm
+}
+
+\usepackage{setspace}
+\singlespacing % interlineado sencillo
+%\onehalfspacing %interlineado 1.5
+
+% --- 2. PAQUETES DE FÍSICA Y MATEMÁTICA (CRÍTICO) ---
+\usepackage{amsmath}     % Ecuaciones avanzadas
+\usepackage{amssymb}     % Símbolos matemáticos extra
+%\usepackage{siunitx}     % INDISPENSABLE para Física Experimental
+                         % Uso: \qty{9.8}{m/s^2} o \num{3.4+-0.1}
+\usepackage{physics}
+\usepackage{bm}
+\usepackage{bbm}
+\usepackage{enumitem}
+\usepackage{mathtools}
+
+% --- 3. GRÁFICOS Y TABLAS ---
+\usepackage{graphicx}
+\usepackage{float}       % Para usar [H] y clavar las figuras donde quieras
+\usepackage{caption}
+\usepackage{subcaption}  % Para poner fig (a) y (b) lado a lado
+\usepackage{booktabs}    % Tablas profesionales (usa \toprule, \midrule, \bottomrule)
+\usepackage[table]{xcolor} 
+\usepackage{adjustbox}
+% Permite superponer texto (porcentual) sobre imágenes: \begin{overpic}[width=..]{...}\put(x,y){...}
+\usepackage[percent]{overpic}
+\renewcommand{\tablename}{Tabla}
+\AtBeginDocument{\renewcommand{\tablename}{Tabla}}
+
+% --- 3.1 PRESENTACIÓN DE SCRIPTS ---
+
+\usepackage{minted}
+%\captionsetup{font=small}
+\captionsetup{font={footnotesize,stretch=1}}
+
+% --- 4. IDIOMA Y REFERENCIAS ---
+\usepackage[english,main=spanish]{babel}
+\usepackage[english]{babelbib}           
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,       
+    allcolors=black,       % Negro para imprimir
+    linktoc=all
+}
+
+% --- 5. FORMATO DE TÍTULOS ---
+\usepackage{titlesec}
+
+%Creative Commons
+\usepackage[
+    type={CC},
+    modifier={by-nc-sa},
+    version={4.0},
+]{doclicense}
+
+% Esto configura el estilo para que diga "Capítulo N" arriba y el título abajo
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries} % Estilo del texto
+  {\chaptertitlename\ \thechapter} % "Capítulo 1"
+  {20pt} % Espacio entre "Capítulo 1" y "RMN"
+  {\Huge} % Tamaño del título del capítulo
+
+\usepackage{emptypage}
+
+
+\begin{document}
+
+\include{0-titulo}
+\afterpage{\null\thispagestyle{empty}\newpage}
+\include{2-resumen}
+\include{2-abstract}
+\include{1-agradecimientos}
+
+\tableofcontents
+\thispagestyle{empty}
+
+
+
+\include{3-introduccion}
+\include{4-marco-teorico}
+\include{5-calibracion-espacial}
+\include{6-calibracion-intensidad}
+\include{7-conclusiones}
+
+\appendix
+% Redefine el formato de capítulo a una sola línea para los apéndices
+\titleformat{\chapter}[hang]
+  {\normalfont\huge\bfseries}
+  {\chaptertitlename\ \thechapter:}
+  {15pt}
+  {\Huge}
+
+\include{8-apendice}
+\include{9-apendiceB}
+
+\cleardoublepage % Asegura que el enlace apunte a la página correcta
+\addcontentsline{toc}{chapter}{\bibname} % \bibname imprime "Bibliografía"
+\bibliographystyle{babunsrt}
+\bibliography{bibliografia}
+
+\end{document}

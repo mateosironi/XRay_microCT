@@ -1,2 +1,19 @@
-# Auto detect text files and perform LF normalization
+# Normalizar finales de línea en archivos de texto
 * text=auto
+
+# Código, documentación y datos de texto: LF en el repositorio
+*.py   text eol=lf
+*.ijm  text eol=lf
+*.md   text eol=lf
+*.txt  text eol=lf
+*.csv  text eol=lf
+*.tex  text eol=lf
+*.bib  text eol=lf
+*.cff  text eol=lf
+
+# Binarios: no tocar ni intentar mostrar diffs de texto
+*.tif  binary
+*.tiff binary
+*.png  binary
+*.jpg  binary
+*.pdf  binary

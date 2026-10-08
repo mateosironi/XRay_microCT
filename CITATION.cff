@@ -1,0 +1,42 @@
+cff-version: 1.2.0
+message: "If you use this code, data or report, please cite it using the metadata below."
+type: software
+title: "Code and data for: Geometric Parametrization and Spatial Resolution of an Open-Architecture X-ray Microtomograph"
+authors:
+  - family-names: "Sironi"
+    given-names: "Mateo"
+    affiliation: "FaMAF, Universidad Nacional de Córdoba, Argentina"
+    # orcid: "https://orcid.org/0000-0000-0000-0000"   # descomentar y completar si tienes ORCID
+abstract: >-
+  ImageJ/Fiji macros, Python scripts and example data for the geometric
+  calibration and the spatial-resolution (MTF) characterization of an
+  open-architecture X-ray microtomograph, developed for an undergraduate
+  thesis in Physics.
+keywords:
+  - X-ray microtomography
+  - micro-CT
+  - geometric calibration
+  - modulation transfer function
+  - spatial resolution
+  - ImageJ
+  - Fiji
+license:
+  - MIT
+  - CC-BY-NC-SA-4.0
+# Descomentar al publicar el repositorio y al crear la release v1.0:
+# repository-code: "https://github.com/USUARIO/REPOSITORIO"
+# date-released: "2026-MM-DD"
+# version: "1.0"
+preferred-citation:
+  type: thesis
+  title: "Parametrización geométrica y resolución espacial de un microtomógrafo de rayos X de arquitectura abierta"
+  authors:
+    - family-names: "Sironi"
+      given-names: "Mateo"
+  year: 2026
+  thesis-type: "Trabajo final de Licenciatura en Física"
+  institution:
+    name: "Universidad Nacional de Córdoba (FaMAF)"
+    city: "Córdoba"
+    country: "AR"
+  license: CC-BY-NC-SA-4.0

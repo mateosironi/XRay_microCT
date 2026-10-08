@@ -1,0 +1,32 @@
+\setcounter{page}{1}
+\chapter*{Resumen}
+
+Este trabajo describe el desarrollo e implementación de un protocolo integral de
+calibración y optimización para un sistema de microtomografía computarizada de rayos X ($\mu$CT)
+de arquitectura abierta. El objetivo central fue transformar un conjunto de componentes
+independientes en un instrumento de alta precisión para la investigación científica,
+comparable a un dispositivo comercial.
+
+La metodología comenzó con la estabilización del hardware, fijando la fuente y el
+detector sobre una base rígida para eliminar desalineaciones accidentales. Se
+implementaron técnicas de alineación física mediante el análisis de proyecciones
+cónicas y la superposición de proyecciones de un cilindro, logrando reducir desviaciones angulares
+a menos de 5$^{\circ}$ y aproximando el punto principal del haz al centro del detector. En
+la etapa de calibración analítica, se evaluaron dos métodos: uno
+de múltiples proyecciones, estudiando las trayectorias elípticas de esferas metálicas,
+que resultó ser el más robusto y consistente para
+determinar parámetros geométricos finos; y el de una única proyección, a partir de
+la relación entre los lados de un cuadrilátero proyectado, el cual se
+descartó por su extrema sensibilidad a errores de posicionamiento.
+
+Asimismo, se caracterizó la resolución espacial efectiva del sistema a partir de un
+estudio de la función de transferencia de modulación
+(MTF). Los resultados situaron la resolución entre 15 y 60 $\mu$m, y se obtuvo la
+curva empírica en función de la magnificación. Finalmente, se aplicaron técnicas de pre-procesamiento
+digital como la corrección de campo plano (FFC) y la corrección de uniformidad
+temporal, las cuales eliminaron patrones electrónicos del detector, aumentaron
+la relación señal-ruido (SNR) y uniformizaron la intensidad del haz en área y tiempo
+de un conjunto de proyecciones. El protocolo fue validado
+exitosamente mediante la reconstrucción tridimensional de muestras biológicas y
+mecánicas con alta nitidez y ausencia de artefactos, obteniéndose un sistema de microtomografía
+con resultados equivalentes a los de uno comercial.

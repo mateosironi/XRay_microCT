@@ -1,0 +1,92 @@
+\label{apendice_A}
+
+\chapter{Método de calibración de una proyección}
+
+\section*{Ecuaciones y fórmulas del método}
+
+A continuación se describen las fórmulas y ecuaciones utilizadas en el método de calibración
+de una única proyección (\ref{cap:cal_espacial}). En el artículo de Sun et al. \cite{Sun2006}
+se explican con mayor detalle.
+
+\subsection*{1. Resolución de ángulos principales}
+
+La ecuación para hallar el ángulo $\phi$ se plantea de forma implícita, igualando la relación de distancias observadas con la expresión teórica:
+
+\begin{equation}
+\frac{L_{13}}{L_{24}} = \frac{2F - l\cdot \tan(\phi)}{2F + l\cdot \tan(\phi)}
+\end{equation}
+
+De manera análoga, la ecuación implícita para obtener el ángulo auxiliar $\Gamma$ es:
+
+\begin{equation}
+\frac{L_{12}}{L_{34}} = \frac{\sqrt{l^2 + 4F^2} - l\cdot \tan(\Gamma)}{\sqrt{l^2 + 4F^2} + l\cdot \tan(\Gamma)}
+\end{equation}
+
+\subsection*{2. Ángulos auxiliares}
+
+Los ángulos $\alpha$ y $\beta$ se definen a partir de los parámetros geométricos del sistema:
+
+\begin{align}
+\alpha &= \arctan\left(\frac{l}{\sqrt{l^2 + 4F^2}}\right) \\
+\beta &= \arctan\left(\frac{l}{2F}\right)
+\end{align}
+
+\subsection*{3. Cálculos geométricos}
+
+Las longitudes de los segmentos espaciales $SI$, $ES$, $EI$, $OI$ y $OE$ se calculan en secuencia:
+
+\begin{align}
+SI &= \frac{D \sqrt{\left(\frac{l}{2F}\right)^2 + 1}}{1 + \left(\frac{l}{2F}\right) \tan(\phi)} \\
+ES &= \frac{SI \cos(\Gamma)}{\cos(\alpha - \Gamma)} \\
+EI &= \sqrt{ES^2 + SI^2 - 2 \cdot ES \cdot SI \cos(\alpha)} \\
+OI &= \frac{l \cdot D}{2F \cos(\phi) + l \sin(\phi)} \\
+OE &= \sqrt{ES^2 + D^2 - 2 \cdot ES \cdot D \cos(\alpha) \cos(\beta)}
+\end{align}
+
+\subsection*{4. Ángulos espaciales adicionales}
+
+El coseno del ángulo $\gamma$ se obtiene aplicando el teorema del coseno generalizado, para luego calcular el ángulo $\theta$:
+
+\begin{align}
+\cos(\gamma) &= \sqrt{1 - \left(\frac{OI^2 + EI^2 - OE^2}{2 \cdot OI \cdot EI}\right)^2} \\
+\theta &= \arccos\left(\frac{\cos(\Gamma)}{\cos(\gamma)}\right)
+\end{align}
+
+\subsection*{5. Cálculo de la corrección $z$}
+
+La variable $z$ se obtiene resolviendo la siguiente ecuación implícita:
+
+\begin{equation}
+L_{13} = \frac{(D + z) \sqrt{\left(\frac{l}{F}\right)^2 + 4} \cos(\Gamma) \sin(2\alpha)}{\left(2 + \frac{l}{F} \tan(\phi)\right) \cos(\alpha + \Gamma) \cos(\alpha - \Gamma)}
+\end{equation}
+
+\subsection*{6. Parámetros del plano auxiliar y transformación de coordenadas}
+
+Dado un punto inicial con coordenadas $(u, v)$, se calcula el punto de intersección $(u_t, v_t)$ en el plano auxiliar:
+
+\begin{align}
+u_t &= -\frac{OI}{2} + \frac{EI^2 - OE^2}{2 \cdot OI} \\
+v_t &= \sqrt{EI^2 - (OI + u_t)^2}
+\end{align}
+
+A partir de estas coordenadas, se determina el ángulo de rotación $\eta$:
+
+\begin{equation}
+\eta = \arcsin\left(\frac{2(u \cdot v_t - v \cdot u_t)}{u_t^2 + v_t^2}\right)
+\end{equation}
+
+Las desviaciones $du$ y $dv$ se calculan aplicando una matriz de rotación:
+
+\begin{align}
+dU &= (u - u_t)\cos(\eta) - (v - v_t)\sin(\eta) \\
+dV &= (u - u_t)\sin(\eta) + (v - v_t)\cos(\eta)
+\end{align}
+
+\subsection*{7. Corrección focal y aumento}
+
+Finalmente, se calcula la corrección de la distancia focal $\Delta F$:
+
+\begin{align}
+\Delta F &= \frac{F \cdot z}{D + z} \\
+\end{align}
+
